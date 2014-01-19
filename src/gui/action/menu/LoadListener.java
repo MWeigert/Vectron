@@ -5,10 +5,12 @@ package gui.action.menu;
 
 
 import java.io.File;
+import java.util.Map;
 
 import main.VP;
+import tools.analyse.ExtractOrigin;
 //import tools.analyse.CheckKindOfLog;
-//import tools.io.LogLoader;
+import tools.io.LogLoader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.BorderPane;
@@ -28,6 +30,7 @@ public class LoadListener implements EventHandler<ActionEvent> {
 
 	private BorderPane border = new BorderPane();
 	private VP vp;
+	private Map<Integer, String> log;
 
 	public LoadListener(BorderPane border, VP vp) {
 		super();
@@ -42,21 +45,24 @@ public class LoadListener implements EventHandler<ActionEvent> {
 
 		File file = fc.showOpenDialog(null);
 
-//		LogLoader loader = new LogLoader(file);
+		LogLoader loader = new LogLoader(file);
 		
-//		vp.setLog(loader.getLog());
+		vp.setLog(loader.getLog());
+		log = loader.getLog();
 		
 		HBox hBox = new HBox();
 		
-//		Text logType = new Text(new CheckKindOfLog(file.getName()).getKindOfLog()+"  ");
-//		logType.setFill(Color.DARKRED);
-//		logType.setFont(Font.font("Arial", FontWeight.BOLD,12));
+		ExtractOrigin extract = new ExtractOrigin(log.get(0));
+		
+		Text logType = new Text(extract.getInfo() + " ");
+		logType.setFill(Color.DARKRED);
+		logType.setFont(Font.font("Arial", FontWeight.BOLD,12));
 		
 		Text text = new Text("Actual file: " + file.getPath());
 		text.setFill(Color.BLUE);
 		text.setFont(Font.font("Arial", FontPosture.ITALIC, 12));
 
-//		hBox.getChildren().addAll(logType, text);
+		hBox.getChildren().addAll(logType, text);
 		
 		border.setBottom(hBox);
 	}

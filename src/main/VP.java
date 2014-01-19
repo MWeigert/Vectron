@@ -4,6 +4,7 @@
 package main;
 
 import gui.menu.FileMenu;
+import gui.menu.SideMenu;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +45,10 @@ public class VP extends Application{
 		MenuBar menu = new MenuBar();
 		menu.getMenus().add(new FileMenu(primaryStage, this).getFileMenu());
 		
+		SideMenu side = new SideMenu(border, this);
+
 		border.setTop(menu);
+		border.setLeft(side.getSideMenu());
 		
 		Scene scene = new Scene(border);
 		
@@ -53,6 +57,14 @@ public class VP extends Application{
 		primaryStage.show();
 	}
 
+	public Map<Integer, String> getLog() {
+		return log;
+	}
+
+	public void setLog(Map<Integer, String> log) {
+		this.log = log;
+	}
+	
 	public BorderPane getBorderPane() {
 		return border;
 	}
