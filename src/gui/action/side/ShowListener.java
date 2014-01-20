@@ -31,7 +31,6 @@ public class ShowListener implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-//		String info = new String();
 		StringBuffer info = new StringBuffer();
 		log = new HashMap<Integer, String>();
 		log = vp.getLog();
@@ -39,10 +38,8 @@ public class ShowListener implements EventHandler<ActionEvent> {
 		for (int i = 0; i < log.size(); i++) {
 			if (i > 0) {
 				info.append("\n");
-//				info += "\n";
 			}
 			info.append(log.get(i));
-//			info += log.get(i);
 		}
 
 		TextArea text = new TextArea(info.toString());

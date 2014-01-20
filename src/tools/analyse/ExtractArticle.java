@@ -12,25 +12,30 @@ import java.util.Map;
  */
 public class ExtractArticle {
 
-	private Map<Double, String> articleMap;
+	private Map<Long, String> articleMap;
 
 	public void extractArticles(Map<Integer, String> log) {
-		articleMap = new HashMap<Double, String>();
+		System.out.println("Starting article extraction");
+		articleMap = new HashMap<Long, String>();
 		String line;
-		Double number;
+		String article;
+		Long number;
 		for (int i = 0; i < log.size(); i++) {
 			line = log.get(i);
-			if (line.substring(0, 2) == "101" && line.indexOf("'")>0) {
-				System.out.println("Gotcha");
-			}
-//				int x = line.indexOf(",") + 1;
-//				line = line.substring(x);
-//				x = line.indexOf(",");
-//				number = Double.valueOf(line.substring(0, x));
+			if (line.substring(0, 3).equals("101") && line.indexOf("'") > 0) {
+				int x = line.indexOf(",") + 1;
+				line = line.substring(x);
+				x = line.indexOf(",");
+				number = Long.valueOf(line.substring(0, x));
+				x = line.indexOf("'") + 1;
+				article = line.substring(x, line.length() - 1);
+				articleMap.put(number, article);
 			}
 		}
+		System.out.println("Finished article extraction: " + articleMap.size() + " Articles extracted.");
+	}
 
-	public Map<Double, String> getArticleMap() {
+	public Map<Long, String> getArticleMap() {
 		return articleMap;
 	}
 
