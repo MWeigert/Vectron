@@ -24,10 +24,10 @@ import javafx.stage.Stage;
 public class VP extends Application {
 
 	private BorderPane border;
-	 private Map<Integer, String> log;
+	private Map<Integer, String> log;
 	private TreeMap<Long, String> articleMap;
 	private Articles articles;
-
+	private Long number;
 	private Stage primaryStage;
 
 	/**
@@ -61,13 +61,13 @@ public class VP extends Application {
 		primaryStage.show();
 	}
 
-	 public Map<Integer, String> getLog() {
-	 return log;
-	 }
-	
-	 public void setLog(Map<Integer, String> log) {
-	 this.log = log;
-	 }
+	public Map<Integer, String> getLog() {
+		return log;
+	}
+
+	public void setLog(Map<Integer, String> log) {
+		this.log = log;
+	}
 
 	public Articles getArticles() {
 		return articles;
@@ -87,6 +87,14 @@ public class VP extends Application {
 
 	public BorderPane getBorderPane() {
 		return border;
+	}
+
+	public Long getNumber(){
+		return number;
+	}
+	
+	public void setNumber(Long number) {
+		this.number = number;
 	}
 
 }

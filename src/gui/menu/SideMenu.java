@@ -5,6 +5,7 @@ package gui.menu;
 
 import main.VP;
 import gui.action.side.ArticleListener;
+import gui.action.side.BadgeListener;
 import gui.action.side.ExtractListener;
 import gui.action.side.ShowListener;
 import javafx.scene.control.Button;
@@ -38,10 +39,12 @@ public class SideMenu {
 		showArticleBtn.setMinWidth(125);
 		showArticleBtn.setOnAction(new ArticleListener(border, vp));
 
-		
+		Button badgeBtn = new Button("Enquire Badge");
+		badgeBtn.setMinWidth(125);
+		badgeBtn.setOnAction(new BadgeListener(vp));
 		
 		side.getChildren().addAll(showBtn, writeLogBtn, extractArticleBtn,
-				showArticleBtn);
+				showArticleBtn, badgeBtn);
 	}
 
 	public VBox getSideMenu() {
