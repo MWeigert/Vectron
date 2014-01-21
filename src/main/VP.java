@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+import data.basis.Articles;
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.scene.control.MenuBar;
@@ -23,8 +24,9 @@ import javafx.stage.Stage;
 public class VP extends Application {
 
 	private BorderPane border;
-	private Map<Integer, String> log;
+	 private Map<Integer, String> log;
 	private TreeMap<Long, String> articleMap;
+	private Articles articles;
 
 	private Stage primaryStage;
 
@@ -59,12 +61,20 @@ public class VP extends Application {
 		primaryStage.show();
 	}
 
-	public Map<Integer, String> getLog() {
-		return log;
+	 public Map<Integer, String> getLog() {
+	 return log;
+	 }
+	
+	 public void setLog(Map<Integer, String> log) {
+	 this.log = log;
+	 }
+
+	public Articles getArticles() {
+		return articles;
 	}
 
-	public void setLog(Map<Integer, String> log) {
-		this.log = log;
+	public void setArticles(Articles articles) {
+		this.articles = articles;
 	}
 
 	public Map<Long, String> getArticle() {

@@ -27,6 +27,7 @@ public class SideMenu {
 		showBtn.setOnAction(new ShowListener(border, vp));
 
 		Button writeLogBtn = new Button("Write Log");
+		writeLogBtn.setDisable(true);
 		writeLogBtn.setMinWidth(125);
 
 		Button extractArticleBtn = new Button("Extract Article");
@@ -37,6 +38,8 @@ public class SideMenu {
 		showArticleBtn.setMinWidth(125);
 		showArticleBtn.setOnAction(new ArticleListener(border, vp));
 
+		
+		
 		side.getChildren().addAll(showBtn, writeLogBtn, extractArticleBtn,
 				showArticleBtn);
 	}
