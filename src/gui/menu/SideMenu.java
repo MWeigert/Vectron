@@ -12,7 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 /**
- * @author Tingle Driftwood
+ * @author Mathias Weigert
  * 
  */
 public class SideMenu {
@@ -23,18 +23,18 @@ public class SideMenu {
 		side = new VBox();
 
 		Button showBtn = new Button("Show Log");
-		showBtn.setMinWidth(100);
+		showBtn.setMinWidth(125);
 		showBtn.setOnAction(new ShowListener(border, vp));
 
 		Button writeLogBtn = new Button("Write Log");
-		writeLogBtn.setMinWidth(100);
+		writeLogBtn.setMinWidth(125);
 
 		Button extractArticleBtn = new Button("Extract Article");
-		extractArticleBtn.setMinWidth(100);
+		extractArticleBtn.setMinWidth(125);
 		extractArticleBtn.setOnAction(new ExtractListener(vp));
 
 		Button showArticleBtn = new Button("Show Article List");
-		showArticleBtn.setMinWidth(100);
+		showArticleBtn.setMinWidth(125);
 		showArticleBtn.setOnAction(new ArticleListener(border, vp));
 
 		side.getChildren().addAll(showBtn, writeLogBtn, extractArticleBtn,

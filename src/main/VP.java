@@ -8,6 +8,7 @@ import gui.menu.SideMenu;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javafx.scene.Scene;
 import javafx.application.Application;
@@ -23,7 +24,7 @@ public class VP extends Application {
 
 	private BorderPane border;
 	private Map<Integer, String> log;
-	private Map<Long, String> articleMap;
+	private TreeMap<Long, String> articleMap;
 
 	private Stage primaryStage;
 
@@ -70,7 +71,7 @@ public class VP extends Application {
 		return articleMap;
 	}
 
-	public void setArticle(Map<Long, String> articleMap) {
+	public void setArticle(TreeMap<Long, String> articleMap) {
 		this.articleMap = articleMap;
 	}
 

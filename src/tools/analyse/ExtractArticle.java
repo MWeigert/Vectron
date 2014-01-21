@@ -3,8 +3,8 @@
  */
 package tools.analyse;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author Mathias Weigert
@@ -12,11 +12,11 @@ import java.util.Map;
  */
 public class ExtractArticle {
 
-	private Map<Long, String> articleMap;
+	private TreeMap<Long, String> articleMap;
 
 	public void extractArticles(Map<Integer, String> log) {
 		System.out.println("Starting article extraction");
-		articleMap = new HashMap<Long, String>();
+		articleMap = new TreeMap<Long, String>();
 		String line;
 		String article;
 		Long number;
@@ -35,7 +35,7 @@ public class ExtractArticle {
 		System.out.println("Finished article extraction: " + articleMap.size() + " Articles extracted.");
 	}
 
-	public Map<Long, String> getArticleMap() {
+	public TreeMap<Long, String> getArticleMap() {
 		return articleMap;
 	}
 

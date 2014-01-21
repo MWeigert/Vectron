@@ -3,11 +3,8 @@
  */
 package gui.action.side;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import java.util.TreeMap;
 
 import main.VP;
 import javafx.event.ActionEvent;
@@ -35,20 +32,11 @@ public class ArticleListener implements EventHandler<ActionEvent> {
 		// TODO Auto-generated method stub
 		System.out.println("Begin to display articles.");
 		StringBuffer info = new StringBuffer();
-		Map<Long, String> articleMap = new HashMap<Long, String>();
+		Map<Long, String> articleMap = new TreeMap<Long, String>();
 		articleMap = vp.getArticle();
 				
 		for (Long number : articleMap.keySet()) {
-
-			System.out.println("Nummer: " + number + " Artikel: "
-					+ articleMap.get(number));
 			info.append(number + " " + articleMap.get(number) + "\n");
-			
-			// for (int i = 0; i < articleMap.size(); i++) {
-			// if (i > 0) {
-			// info.append("\n");
-			// }
-			// info.append(articleMap.);
 		}
 
 		 TextArea text = new TextArea(info.toString());
