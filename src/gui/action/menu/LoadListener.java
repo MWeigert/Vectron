@@ -1,5 +1,6 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
 package gui.action.menu;
 
@@ -7,9 +8,10 @@ import java.io.File;
 import java.util.Map;
 
 import main.VP;
-import tools.analyse.ExtractOrigin;
-//import tools.analyse.CheckKindOfLog;
+
+import tools.analyse.OriginExtractor;
 import tools.io.LogLoader;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextArea;
@@ -24,7 +26,10 @@ import javafx.stage.FileChooser;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Eventhandler of load menu -> handles complete loading process
+ * of the vectron export file
  */
 public class LoadListener implements EventHandler<ActionEvent> {
 
@@ -40,7 +45,6 @@ public class LoadListener implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		FileChooser fc = new FileChooser();
 
 		File file = fc.showOpenDialog(null);
@@ -52,8 +56,9 @@ public class LoadListener implements EventHandler<ActionEvent> {
 
 		HBox hBox = new HBox();
 
-		ExtractOrigin extract = new ExtractOrigin(log.get(0));
+		OriginExtractor extract = new OriginExtractor(log.get(0));
 
+		// Generates statusbar on bottom of application
 		Text logType = new Text(extract.getInfo() + " ");
 		logType.setFill(Color.DARKRED);
 		logType.setFont(Font.font("Arial", FontWeight.BOLD, 12));

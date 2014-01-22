@@ -1,23 +1,30 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
-package tools.analyse;
+
+package tools.analyse.articles;
 
 import java.util.Map;
+
+import tools.analyse.DefinitionExtractor;
 
 import data.basis.Article;
 import data.basis.Articles;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Class which extract a complete article set from the Vectron file.
  */
-public class ExtractArticles {
+public class ArticlesExtractor {
 
 	private Articles articles;
 	private Article article;
 
-	public ExtractArticles(Map<Integer, String> log) {
+	public ArticlesExtractor(Map<Integer, String> log) {
+		
 		System.out.println("Artikel werden ausgelesen.");
 		int anz = 0;
 		String line;
@@ -26,29 +33,36 @@ public class ExtractArticles {
 		articles = new Articles();
 		int def;
 
+		// Start of article parsing in Vectron file.
 		for (int i = 0; i < log.size(); i++) {
 			line = log.get(i);
+			// 101 in first column of file is a article defenition. 
 			if (line.substring(0, 3).equals("101")) {
-				number = new ExtractArticleNumber(line).getNumber();
+				number = new ArticleNumberExtractor(line).getNumber();
+				// Check if its an new article or still information to the actual one.
 				if (!(number.equals(oldNumber))) {
 					oldNumber = number;
+					// Write actual article in article set
 					if (article != null) {
 						articles.addArticle(article);
 						anz++;
 					}
+					// Generate new article
 					article = new Article();
 					article.setNumber(number);
-					article.setName(new ExtractArticleName(line).getName());
+					article.setName(new ArticleNameExtractor(line).getName());
+					// Extract further information of actuall article
 				} else {
-					def = new ExtractDefinition(line).getDefinition();
+					def = new DefinitionExtractor(line).getDefinition();
 					switch (def) {
+					// 201 till 210 defines the different price levels of an article
 					case 201:
-						article.setPriceLevel1(new ExtractPrice(line)
+						article.setPriceLevel1(new PriceExtractor(line)
 								.getPrice());
 						System.out.println("Preislevel 1 gefunden.");
 						break;
 					case 202:
-						article.setPriceLevel2(new ExtractPrice(line)
+						article.setPriceLevel2(new PriceExtractor(line)
 								.getPrice());
 						System.out.println("Preislevel 2 gefunden.");
 						break;
@@ -60,6 +74,7 @@ public class ExtractArticles {
 				}
 			}
 		}
+		// Write last article in article set
 		articles.addArticle(article);
 		anz++;
 		System.out.println("Es wurden " + anz + " Artikel exportiert.");

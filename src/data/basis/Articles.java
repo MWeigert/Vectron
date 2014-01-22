@@ -1,6 +1,8 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package data.basis;
 
 import javafx.collections.FXCollections;
@@ -8,7 +10,9 @@ import javafx.collections.ObservableList;
 
 /**
  * @author Mathias Weigert
- *
+ * @version 0.75
+ * 
+ * List of articles -> used in ArticleTable
  */
 public class Articles {
 

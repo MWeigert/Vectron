@@ -1,12 +1,17 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package data.basis;
 
 import javafx.beans.property.SimpleStringProperty;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
+ * 
+ * Class which stores all article data
  * 
  */
 public class Article {
@@ -19,11 +24,6 @@ public class Article {
 	public Article() {
 		name = new SimpleStringProperty();
 	}
-
-//	public Article(Long number, String name) {
-//		this.number = number;
-//		this.name = new SimpleStringProperty(name);
-//	}
 
 	public String getName() {
 		return name.get();

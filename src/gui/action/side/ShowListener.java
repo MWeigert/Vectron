@@ -1,20 +1,25 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package gui.action.side;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import main.VP;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 
 /**
- * @author Tingle Driftwood
+ * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Eventhandler -> handles the displaying of the vectron export file
  */
 public class ShowListener implements EventHandler<ActionEvent> {
 
@@ -30,7 +35,6 @@ public class ShowListener implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		StringBuffer info = new StringBuffer();
 		log = new HashMap<Integer, String>();
 		log = vp.getLog();
@@ -41,7 +45,6 @@ public class ShowListener implements EventHandler<ActionEvent> {
 			}
 			info.append(log.get(i));
 		}
-
 		TextArea text = new TextArea(info.toString());
 		border.setCenter(text);
 	}

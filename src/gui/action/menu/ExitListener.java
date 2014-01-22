@@ -1,5 +1,6 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
 package gui.action.menu;
 
@@ -8,7 +9,10 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
 /**
- * @author Tingle Driftwood
+ * @author Mathias Weigert
+ * @version 0.75
+ * 
+ * Eventhandler to exit application via file menu
  * 
  */
 public class ExitListener implements EventHandler<javafx.event.ActionEvent> {
@@ -20,13 +24,8 @@ public class ExitListener implements EventHandler<javafx.event.ActionEvent> {
 		this.primaryStage = primaryStage;
 	}
 
-	
-	/*
-	 * Actionlistener which close the application.
-	 */
 	@Override
 	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		primaryStage.close();
 	};
 

@@ -1,10 +1,13 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package tools.table;
 
 import data.basis.Article;
 import data.basis.Articles;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -15,7 +18,10 @@ import javafx.scene.text.Font;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Class which generates from an article set an table which is displayed on the
+ * main application.
  */
 public class ArticleTable {
 

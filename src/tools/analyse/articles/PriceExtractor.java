@@ -1,17 +1,21 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
-package tools.analyse;
+
+package tools.analyse.articles;
 
 /**
  * @author Mathias Weigert
- *
+ * @version 0.75
+ * 
+ * Class which extract article price from Vectron file.
  */
-public class ExtractPrice {
+public class PriceExtractor {
 	
 	private Double price;
 
-	public ExtractPrice(String line){
+	public PriceExtractor(String line){
 		int x = line.indexOf(",") + 1;
 		line = line.substring(x);
 		x = line.indexOf(",") + 1;

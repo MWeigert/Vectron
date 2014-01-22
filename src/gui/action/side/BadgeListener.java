@@ -1,10 +1,14 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package gui.action.side;
 
 import main.VP;
+
 import gui.action.button.BadgeInputListener;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -17,7 +21,10 @@ import javafx.stage.Stage;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Eventhandler -> opens new window to grab additional data
+ * like badge number
  */
 public class BadgeListener implements EventHandler<ActionEvent> {
 
@@ -30,7 +37,6 @@ public class BadgeListener implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		Stage stage = new Stage();
 		stage.setTitle("Enquire Badge Revenue");
 

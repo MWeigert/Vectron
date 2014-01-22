@@ -1,5 +1,6 @@
 /**
- * Class which loads Vanguard logfile and store the content in a map
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
 package tools.io;
 
@@ -11,8 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Tingle Driftwood
- *
+ * @author Mathias Weigert
+ * @version 0.75
+ * 
+ * Class which load data from Vectron export file in a map.
  */
 public class LogLoader {
 	

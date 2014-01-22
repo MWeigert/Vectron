@@ -1,17 +1,21 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package tools.analyse;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Class which extracts the third column of data from Vectron file
  */
-public class ExtractDefinition {
+public class DefinitionExtractor {
 
 	private int definition;
 
-	public ExtractDefinition(String line) {
+	public DefinitionExtractor(String line) {
 		int x = line.indexOf(",") + 1;
 		line = line.substring(x);
 		x = line.indexOf(",") + 1;

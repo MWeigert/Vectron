@@ -1,9 +1,12 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package gui.action.button;
 
 import main.VP;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
@@ -11,7 +14,9 @@ import javafx.stage.Stage;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Eventhandler of the input button -> starts the enquire badge process
  */
 public class BadgeInputListener implements EventHandler<ActionEvent> {
 

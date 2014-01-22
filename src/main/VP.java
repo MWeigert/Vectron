@@ -1,6 +1,8 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package main;
 
 import gui.menu.FileMenu;
@@ -11,6 +13,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import data.basis.Articles;
+
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.scene.control.MenuBar;
@@ -19,7 +22,10 @@ import javafx.stage.Stage;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Main class of application opens the application window and hold 
+ * all important used data. 
  */
 public class VP extends Application {
 
@@ -34,13 +40,12 @@ public class VP extends Application {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		launch(args);
 	}
 
+	// Generates and starts the application.
 	@Override
 	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
 		this.primaryStage = new Stage();
 
 		border = new BorderPane();
@@ -61,6 +66,10 @@ public class VP extends Application {
 		primaryStage.show();
 	}
 
+	/*
+	 * Getter and Setter of the used application data
+	 */
+	
 	public Map<Integer, String> getLog() {
 		return log;
 	}

@@ -1,18 +1,22 @@
 /**
- * 
+ * Vectron Parser
+ * Parser to analyze Badge export files from the Vectroncommander
  */
+
 package tools.analyse;
 
 /**
  * @author Mathias Weigert
+ * @version 0.75
  * 
+ * Class which extract cash point data and system info from Vectron file.
  */
-public class ExtractOrigin {
+public class OriginExtractor {
 
 	private String infoString;
 	private String line;
 
-	public ExtractOrigin(String line) {
+	public OriginExtractor(String line) {
 		this.line = line;
 		storeExtract();
 		systemExtract();
