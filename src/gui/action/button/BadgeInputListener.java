@@ -5,8 +5,9 @@
 
 package gui.action.button;
 
+import tools.analyse.TypeExtractor;
+import tools.analyse.transaction.TransactionsExtractor;
 import main.VP;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
@@ -37,6 +38,7 @@ public class BadgeInputListener implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 		vp.setNumber(Long.valueOf(field.getText()));
 		stage.close();
+		TransactionsExtractor extratcor = new TransactionsExtractor(vp.getLog());
 	}
 
 }
