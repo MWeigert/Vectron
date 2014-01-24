@@ -66,6 +66,46 @@ public class ArticlesExtractor {
 								.getPrice());
 						System.out.println("Preislevel 2 gefunden.");
 						break;
+					case 203:
+						article.setPriceLevel3(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 3 gefunden.");
+						break;
+					case 204:
+						article.setPriceLevel4(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 4 gefunden.");
+						break;
+					case 205:
+						article.setPriceLevel5(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 5 gefunden.");
+						break;
+					case 206:
+						article.setPriceLevel6(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 6 gefunden.");
+						break;
+					case 207:
+						article.setPriceLevel7(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 7 gefunden.");
+						break;
+					case 208:
+						article.setPriceLevel8(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 8 gefunden.");
+						break;
+					case 209:
+						article.setPriceLevel9(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 9 gefunden.");
+						break;
+					case 210:
+						article.setPriceLevel10(new PriceExtractor(line)
+								.getPrice());
+						System.out.println("Preislevel 10 gefunden.");
+						break;
 					default:
 						System.out.println("Unbekannte Zeilendefinition: "
 								+ def);
