@@ -5,12 +5,11 @@
 package gui.menu;
 
 import main.VP;
-
 import gui.action.side.ArticleListener;
 import gui.action.side.BadgeListener;
+import gui.action.side.DFextractListener;
 import gui.action.side.ExtractListener;
 import gui.action.side.ShowListener;
-
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -33,7 +32,7 @@ public class SideMenu {
 		showBtn.setMinWidth(125);
 		showBtn.setOnAction(new ShowListener(border, vp));
 
-		// No funtion in Version 0.75
+		// No function in Version 0.75
 		Button writeLogBtn = new Button("Write Log");
 		writeLogBtn.setDisable(true);
 		writeLogBtn.setMinWidth(125);
@@ -53,8 +52,12 @@ public class SideMenu {
 		badgeBtn.setMinWidth(125);
 		badgeBtn.setOnAction(new BadgeListener(vp));
 		
+		Button dataBtn = new Button("Extract Data");
+		dataBtn.setMinWidth(125);
+		dataBtn.setOnAction(new DFextractListener(vp));
+		
 		side.getChildren().addAll(showBtn, writeLogBtn, extractArticleBtn,
-				showArticleBtn, badgeBtn);
+				showArticleBtn, badgeBtn, dataBtn);
 	}
 
 	public VBox getSideMenu() {

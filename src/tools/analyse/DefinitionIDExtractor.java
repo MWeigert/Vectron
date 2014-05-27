@@ -11,14 +11,12 @@ package tools.analyse;
  * 
  * Class which extracts the third column of data from Vectron file
  */
-public class DefinitionExtractor {
+public class DefinitionIDExtractor {
 
 	private int definition;
 
-	public DefinitionExtractor(String line) {
+	public DefinitionIDExtractor(String line) {
 		int x = line.indexOf(",") + 1;
-		line = line.substring(x);
-		x = line.indexOf(",") + 1;
 		line = line.substring(x);
 		x = line.indexOf(",");
 		String defStr = line.substring(0, x);
