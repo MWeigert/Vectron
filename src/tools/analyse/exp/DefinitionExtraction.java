@@ -5,6 +5,8 @@
 
 package tools.analyse.exp;
 
+import tools.analyse.DefinitionIDExtractor;
+import tools.analyse.TypeExtractor;
 import data.basis.Definition;
 
 /**
@@ -16,29 +18,31 @@ import data.basis.Definition;
  * 
  */
 public class DefinitionExtraction {
-	
+
 	private Definition definition;
-	private String line;
-	
-	public DefinitionExtraction(String line) {
-		this.line=line;
-	}
-	
-	public void extract(String line) {
+
+	public Definition dataExtraction(String line, String lineNew) {
 		int anf = 0;
 		int ende = 0;
 		boolean onWork = true;
-		
+		definition = new Definition();
+
+		definition.setLineTypeID(new TypeExtractor(line).getType());
+		definition.setDefinitionID(new DefinitionIDExtractor(line)
+				.getDefinition());
+
 		// Extract the data fields from the data line
 		do {
-			ende = line.indexOf(';', anf);
-			if (ende == line.length() - 1) {
+			ende = lineNew.indexOf(';', anf);
+			if (ende == lineNew.length() - 1) {
 				onWork = false;
 			}
-			definition.addDataField(new DataFieldExtraction(line.substring(anf, ende)).getData());
+			definition.addDataField(new DataFieldExtraction(lineNew.substring(
+					anf, ende)).getData());
 			anf = ende + 1;
 		} while (onWork);
 		System.out.println("Extraction of Definition finished.");
+		return definition;
 	}
 
 }
