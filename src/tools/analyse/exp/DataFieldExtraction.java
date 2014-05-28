@@ -44,8 +44,8 @@ public class DataFieldExtraction {
 
 		// Extract data field number
 		data.setDfNumber(Integer.valueOf(line));
-		System.out.println("Finished Data Field Extraction");
-		System.out.println("Nr.: "+ data.getDfNumber()+" Type: "+data.getDataType()+" Value: "+data.getDataValue());
+//		System.out.println("Finished Data Field Extraction");
+//		System.out.println("Nr.: "+ data.getDfNumber()+" Type: "+data.getDataType()+" Value: "+data.getDataValue());
 	}
 
 	public DataField getData() {
