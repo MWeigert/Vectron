@@ -53,11 +53,11 @@ public class ArticleTable {
 		pl6Col.setMinWidth(55);
 		TableColumn pl7Col = new TableColumn("Preis 7");
 		pl7Col.setMinWidth(55);
-		TableColumn pl8Col = new TableColumn("Catering");
+		TableColumn pl8Col = new TableColumn("Preis 8");
 		pl8Col.setMinWidth(55);
-		TableColumn pl9Col = new TableColumn("Automat");
+		TableColumn pl9Col = new TableColumn("Preis 9");
 		pl9Col.setMinWidth(55);
-		TableColumn pl10Col = new TableColumn("EK Preis");
+		TableColumn pl10Col = new TableColumn("Preis 10");
 		pl10Col.setMinWidth(55);
 
 		numberCol.setCellValueFactory(new PropertyValueFactory<Article, Long>("number"));
