@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import data.basis.Articles;
-
+import data.basis.Definitions;
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.scene.control.MenuBar;
@@ -24,8 +24,8 @@ import javafx.stage.Stage;
  * @author Mathias Weigert
  * @version 0.75
  * 
- * Main class of application opens the application window and hold 
- * all important used data. 
+ *          Main class of application opens the application window and hold all
+ *          important used data.
  */
 public class VP extends Application {
 
@@ -35,6 +35,7 @@ public class VP extends Application {
 	private Articles articles;
 	private Long number;
 	private Stage primaryStage;
+	private Definitions defs;
 
 	/**
 	 * @param args
@@ -69,7 +70,7 @@ public class VP extends Application {
 	/*
 	 * Getter and Setter of the used application data
 	 */
-	
+
 	public Map<Integer, String> getLog() {
 		return log;
 	}
@@ -98,12 +99,20 @@ public class VP extends Application {
 		return border;
 	}
 
-	public Long getNumber(){
+	public Long getNumber() {
 		return number;
 	}
-	
+
 	public void setNumber(Long number) {
 		this.number = number;
 	}
 
+	public Definitions getDefinitions() {
+		return defs;
+	}
+
+	public void setDefinitions(Definitions defs) {
+		this.defs = defs;
+	}
+	
 }

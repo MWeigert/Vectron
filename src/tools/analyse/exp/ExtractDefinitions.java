@@ -57,4 +57,8 @@ public class ExtractDefinitions {
 				+ " lines exported.");
 	}
 
+	public Definitions getDefinitions() {
+		return definitions;
+	}
+	
 }

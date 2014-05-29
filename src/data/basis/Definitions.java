@@ -5,8 +5,7 @@
 
 package data.basis;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.ArrayList;
 
 /**
  * @author Mathias Weigert
@@ -15,15 +14,15 @@ import javafx.collections.ObservableList;
  * List of definitions -> used in JavaFX tables
  */
 
-public class Definitions {
+public class Definitions{
 	
-	private ObservableList<Definition> definitions =FXCollections.observableArrayList();
+	private ArrayList<Definition> definitions = new ArrayList<Definition>();
 	
 	public void addDefinition(Definition definition) {
 		definitions.add(definition);
 	}
 	
-	public ObservableList<Definition> getDefinitions() {
+	public ArrayList<Definition> getDefinitions() {
 		return definitions;
 	}
 

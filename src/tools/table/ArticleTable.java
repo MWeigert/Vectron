@@ -26,10 +26,10 @@ import javafx.scene.text.Font;
 public class ArticleTable {
 
 	private TableView table;
-	private Articles articles;
+//	private Articles articles;
 
 	public VBox getTable(Articles articles) {
-		this.articles = articles;
+//		this.articles = articles;
 		VBox box = new VBox();
 
 		Label label = new Label("Artikelliste");
