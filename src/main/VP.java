@@ -5,6 +5,7 @@
 
 package main;
 
+import gui.menu.ArticleMenu;
 import gui.menu.DbMenu;
 import gui.menu.FileMenu;
 import gui.menu.SideMenu;
@@ -51,10 +52,13 @@ public class VP extends Application {
 		this.primaryStage = new Stage();
 
 		border = new BorderPane();
+		border.autosize();
 		log = new HashMap<Integer, String>();
 
 		MenuBar menu = new MenuBar();
-		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(), new DbMenu(this).getdbMenu());
+		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(),
+				new ArticleMenu(this).getArticleMenu(),
+				new DbMenu(this).getdbMenu());
 
 		SideMenu side = new SideMenu(border, this);
 
@@ -115,5 +119,5 @@ public class VP extends Application {
 	public void setDefinitions(Definitions defs) {
 		this.defs = defs;
 	}
-	
+
 }

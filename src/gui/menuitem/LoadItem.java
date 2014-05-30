@@ -20,7 +20,7 @@ import javafx.scene.layout.BorderPane;
  */
 public class LoadItem {
 
-	MenuItem loadItem;
+	private MenuItem loadItem;
 
 	public LoadItem(BorderPane border, VP vp) {
 		loadItem = new MenuItem("Load");

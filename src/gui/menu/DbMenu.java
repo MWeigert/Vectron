@@ -17,12 +17,12 @@ import main.VP;
  */
 public class DbMenu {
 	
-	Menu dbMenu;
+	private Menu dbMenu;
 	
 	public DbMenu(VP vp) {
 		dbMenu = new Menu("Database");
 		
-		//DEfine submenu's of the database menu
+		//Define submenu's of the database menu
 		DbConnectItem connectItem = new DbConnectItem(vp.getBorderPane(), vp);
 		
 		dbMenu.getItems().addAll(connectItem.getConnectItem());

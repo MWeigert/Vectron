@@ -5,13 +5,11 @@
 
 package gui.action.side;
 
-import tools.table.ArticleTable;
-
-import main.VP;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.BorderPane;
+import main.VP;
+import tools.table.ArticleTable;
 
 /**
  * @author Mathias Weigert

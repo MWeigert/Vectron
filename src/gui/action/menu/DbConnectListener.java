@@ -24,13 +24,13 @@ import main.VP;
 
 public class DbConnectListener implements EventHandler<ActionEvent> {
 
-	private BorderPane border = new BorderPane();
-	private VP vp;
+//	private BorderPane border = new BorderPane();
+//	private VP vp;
 
 	public DbConnectListener(BorderPane border, VP vp) {
 		super();
-		this.border = border;
-		this.vp = vp;
+//		this.border = border;
+//		this.vp = vp;
 	}
 
 	@Override
@@ -38,6 +38,7 @@ public class DbConnectListener implements EventHandler<ActionEvent> {
 		// TODO Auto-generated method stub
 		DbConnection dbCon = new DbConnection();
 		try {
+			@SuppressWarnings("unused")
 			Connection conn = dbCon.getConnection();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

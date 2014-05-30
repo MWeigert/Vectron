@@ -18,6 +18,8 @@ public class Article {
 
 	private Long number;
 	private SimpleStringProperty name;
+	private SimpleStringProperty display;
+	private Integer wg;
 	private Double priceLevel1;
 	private Double priceLevel2;
 	private Double priceLevel3;
@@ -31,6 +33,7 @@ public class Article {
 
 	public Article() {
 		name = new SimpleStringProperty();
+		display = new SimpleStringProperty();
 	}
 
 	public String getName() {
@@ -41,12 +44,28 @@ public class Article {
 		this.name.set(name);
 	}
 
+	public String getDisplay() {
+		return display.get();
+	}
+
+	public void setDisplay(String display) {
+		this.display.set(display);
+	}
+
 	public Long getNumber() {
 		return number;
 	}
 
 	public void setNumber(Long number) {
 		this.number = number;
+	}
+
+	public Integer getWg() {
+		return wg;
+	}
+
+	public void setWg(Integer wg) {
+		this.wg = wg;
 	}
 
 	public Double getPriceLevel1() {
