@@ -5,6 +5,7 @@
 
 package main;
 
+import gui.menu.DbMenu;
 import gui.menu.FileMenu;
 import gui.menu.SideMenu;
 
@@ -53,7 +54,7 @@ public class VP extends Application {
 		log = new HashMap<Integer, String>();
 
 		MenuBar menu = new MenuBar();
-		menu.getMenus().add(new FileMenu(primaryStage, this).getFileMenu());
+		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(), new DbMenu(this).getdbMenu());
 
 		SideMenu side = new SideMenu(border, this);
 
