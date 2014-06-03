@@ -10,6 +10,7 @@ import javafx.event.EventHandler;
 import main.VP;
 import tools.analyse.articles.ArticlesExtractor;
 import tools.analyse.exp.ExtractDefinitions;
+import tools.analyse.pos.POSExtractor;
 
 /**
  * @author Mathias Weigert
@@ -34,6 +35,8 @@ public class ExtractListener implements EventHandler<ActionEvent> {
 		vp.setDefinitions(exDef.getDefinitions());
 		ArticlesExtractor artEx = new ArticlesExtractor(vp.getDefinitions());
 		vp.setArticles(artEx.getArticles());
+		POSExtractor posEx = new POSExtractor(vp.getDefinitions());
+		vp.setPos(posEx.getPOSArray());
 	}
 
 }

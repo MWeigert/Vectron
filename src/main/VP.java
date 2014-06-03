@@ -8,6 +8,7 @@ package main;
 import gui.menu.ArticleMenu;
 import gui.menu.DbMenu;
 import gui.menu.FileMenu;
+import gui.menu.PosMenu;
 import gui.menu.SideMenu;
 
 import java.util.HashMap;
@@ -16,6 +17,7 @@ import java.util.TreeMap;
 
 import data.basis.Articles;
 import data.basis.Definitions;
+import data.basis.POSArray;
 import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.scene.control.MenuBar;
@@ -34,6 +36,7 @@ public class VP extends Application {
 	private BorderPane border;
 	private Map<Integer, String> log;
 	private TreeMap<Long, String> articleMap;
+	private POSArray pos;
 	private Articles articles;
 	private Long number;
 	private Stage primaryStage;
@@ -57,6 +60,7 @@ public class VP extends Application {
 
 		MenuBar menu = new MenuBar();
 		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(),
+				new PosMenu(this).getPosMenu(),
 				new ArticleMenu(this).getArticleMenu(),
 				new DbMenu(this).getdbMenu());
 
@@ -118,6 +122,14 @@ public class VP extends Application {
 
 	public void setDefinitions(Definitions defs) {
 		this.defs = defs;
+	}
+
+	public POSArray getPos() {
+		return pos;
+	}
+
+	public void setPos(POSArray pos) {
+		this.pos = pos;
 	}
 
 }
