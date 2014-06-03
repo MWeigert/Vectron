@@ -52,7 +52,7 @@ public class POSExtractor {
 						break;
 					// ID 19 => POS IP address
 					case 19:
-						pos.setIp(df.getDataValue());
+						pos.setIp(df.getDataType());
 						break;
 					// Last data field in POS information line
 					case 51:
