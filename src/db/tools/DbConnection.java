@@ -24,7 +24,7 @@ public class DbConnection {
 	    String userName = "XXX";
 	    String pwd = "XXX";
 
-	    String url = "jdbc:sqlserver://192.168.8.23\\SERVM011:1434;databaseName=POSKassen";
+	    String url = "jdbc:sqlserver://SERVM011.zfv.loc;databaseName=POSKassen";
 	    try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		} catch (ClassNotFoundException e) {
