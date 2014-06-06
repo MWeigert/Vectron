@@ -10,6 +10,7 @@ import gui.menu.DbMenu;
 import gui.menu.FileMenu;
 import gui.menu.PosMenu;
 import gui.menu.SideMenu;
+import gui.menu.WGMenu;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -61,6 +62,7 @@ public class VP extends Application {
 		MenuBar menu = new MenuBar();
 		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(),
 				new PosMenu(this).getPosMenu(),
+				new WGMenu(this).getWgMenu(),
 				new ArticleMenu(this).getArticleMenu(),
 				new DbMenu(this).getdbMenu());
 
