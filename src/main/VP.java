@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import data.basis.Articles;
+import data.basis.CashPointArray;
 import data.basis.Definitions;
 import data.basis.POSArray;
 import javafx.scene.Scene;
@@ -38,10 +39,12 @@ public class VP extends Application {
 	private Map<Integer, String> log;
 	private TreeMap<Long, String> articleMap;
 	private POSArray pos;
+	private CashPointArray cpArray;
 	private Articles articles;
 	private Long number;
 	private Stage primaryStage;
 	private Definitions defs;
+	private byte fileType;
 
 	/**
 	 * @param args
@@ -61,8 +64,7 @@ public class VP extends Application {
 
 		MenuBar menu = new MenuBar();
 		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(),
-				new PosMenu(this).getPosMenu(),
-				new WGMenu(this).getWgMenu(),
+				new PosMenu(this).getPosMenu(), new WGMenu(this).getWgMenu(),
 				new ArticleMenu(this).getArticleMenu(),
 				new DbMenu(this).getdbMenu());
 
@@ -132,6 +134,22 @@ public class VP extends Application {
 
 	public void setPos(POSArray pos) {
 		this.pos = pos;
+	}
+
+	public byte getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(byte fileType) {
+		this.fileType = fileType;
+	}
+
+	public CashPointArray getCpArray() {
+		return cpArray;
+	}
+
+	public void setCpArray(CashPointArray cpArray) {
+		this.cpArray = cpArray;
 	}
 
 }

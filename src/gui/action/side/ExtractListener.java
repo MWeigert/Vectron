@@ -10,6 +10,7 @@ import javafx.event.EventHandler;
 import main.VP;
 import tools.analyse.articles.ArticlesExtractor;
 import tools.analyse.exp.ExtractDefinitions;
+import tools.analyse.pos.CashPointExtractor;
 import tools.analyse.pos.POSExtractor;
 
 /**
@@ -31,12 +32,20 @@ public class ExtractListener implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		ExtractDefinitions exDef = new ExtractDefinitions(vp.getLog());
-		vp.setDefinitions(exDef.getDefinitions());
-		ArticlesExtractor artEx = new ArticlesExtractor(vp.getDefinitions());
-		vp.setArticles(artEx.getArticles());
-		POSExtractor posEx = new POSExtractor(vp.getDefinitions());
-		vp.setPos(posEx.getPOSArray());
+
+		if (vp.getFileType() == 1) {
+			CashPointExtractor cpEx = new CashPointExtractor(vp.getLog());
+			vp.setCpArray(cpEx.getCashPointArray());
+		}
+
+		if (vp.getFileType() == 2) {
+			ExtractDefinitions exDef = new ExtractDefinitions(vp.getLog());
+			vp.setDefinitions(exDef.getDefinitions());
+			ArticlesExtractor artEx = new ArticlesExtractor(vp.getDefinitions());
+			vp.setArticles(artEx.getArticles());
+			POSExtractor posEx = new POSExtractor(vp.getDefinitions());
+			vp.setPos(posEx.getPOSArray());
+		}
 	}
 
 }

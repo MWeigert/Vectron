@@ -9,17 +9,20 @@ package tools.analyse;
  * @author Mathias Weigert
  * @version 0.75
  * 
- * Class which extract cash point data and system info from Vectron file.
+ *          Class which extract cash point data and system info from Vectron
+ *          file.
  */
 public class OriginExtractor {
 
 	private String infoString;
 	private String line;
+	private byte fileType;
 
 	public OriginExtractor(String line) {
 		this.line = line;
 		storeExtract();
 		systemExtract();
+		fileTypeExtract();
 	}
 
 	private void storeExtract() {
@@ -37,11 +40,28 @@ public class OriginExtractor {
 		int x = line.lastIndexOf(";");
 		String zs = line.substring(0, x);
 		x = zs.lastIndexOf(",");
-		infoString = infoString + " System: " + zs.substring(x+1) + " | ";
+		infoString = infoString + " System: " + zs.substring(x + 1) + " | ";
 	}
-	
+
+	private void fileTypeExtract() {
+		this.fileType = 0;
+		int x = line.indexOf(",");
+		Integer def = new Integer(line.substring(0, x));
+		if (def == 1000) {
+			fileType = 1;
+		}
+		if (def == 10000 || def == 20000) {
+			fileType = 2;
+		}
+		infoString += " FileType: " + fileType;
+	}
+
 	public String getInfo() {
 		return infoString;
+	}
+
+	public byte getFileType() {
+		return fileType;
 	}
 
 }

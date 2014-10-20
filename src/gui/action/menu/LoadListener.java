@@ -57,6 +57,8 @@ public class LoadListener implements EventHandler<ActionEvent> {
 		HBox hBox = new HBox();
 
 		OriginExtractor extract = new OriginExtractor(log.get(0));
+		
+		vp.setFileType(extract.getFileType());
 
 		// Generates statusbar on bottom of application
 		Text logType = new Text(extract.getInfo() + " ");
