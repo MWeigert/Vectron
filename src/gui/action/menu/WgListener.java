@@ -6,7 +6,6 @@
 package gui.action.menu;
 
 import main.VP;
-import tools.table.ArticleTable;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.BorderPane;
@@ -30,8 +29,7 @@ public class WgListener implements EventHandler<ActionEvent>{
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		
-		border.setCenter(table.getTable(vp.getArticles()));
+		// not yet implemented
 	}
 
 }
