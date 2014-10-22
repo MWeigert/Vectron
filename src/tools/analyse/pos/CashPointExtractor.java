@@ -55,7 +55,7 @@ public class CashPointExtractor {
 								line).getStringValue());
 						break;
 					case PVERSION:
-						cp.setHardwareVersion(new Type1ValueExtractor(type,
+						cp.setSoftwareVersion(new Type1ValueExtractor(type,
 								line).getStringValue());
 						break;
 					case BUILD:
@@ -97,7 +97,8 @@ public class CashPointExtractor {
 						// not yet implemented
 						break;
 					case TYPE:
-						// not yet implemented
+						cp.setType(new Type1ValueExtractor(type, line)
+								.getStringValue());
 						break;
 					case OSVERSION:
 						cp.setOsVersion(new Type1ValueExtractor(type, line)

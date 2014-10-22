@@ -5,6 +5,7 @@
 
 package gui.action.side;
 
+import gui.messages.MessageBox;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import main.VP;
@@ -36,6 +37,7 @@ public class ExtractListener implements EventHandler<ActionEvent> {
 		if (vp.getFileType() == 1) {
 			CashPointExtractor cpEx = new CashPointExtractor(vp.getLog());
 			vp.setCpArray(cpEx.getCashPointArray());
+			new MessageBox("Information", "Extraction of type 1 file finished");
 		}
 
 		if (vp.getFileType() == 2) {

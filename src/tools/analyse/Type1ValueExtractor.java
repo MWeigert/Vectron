@@ -84,7 +84,7 @@ public class Type1ValueExtractor {
 
 	public void extractNumber(){
 		int anf=line.indexOf(":")+1;
-		value = line.substring(anf, line.length() - 1);
+		value = line.substring(anf, line.length());
 	}
 	
 	public String getStringValue() {

@@ -24,7 +24,7 @@ public class CashPoint {
 	private String serialNumber;
 	private Integer hardwareType;
 	private Integer flashFormat;
-	private String HardwareRevision;
+	private String hardwareRevision;
 	private String type;
 	private String osVersion;
 	private String dumpPWD;
@@ -90,10 +90,10 @@ public class CashPoint {
 		this.flashFormat = flashFormat;
 	}
 	public String getHardwareRevision() {
-		return HardwareRevision;
+		return hardwareRevision;
 	}
 	public void setHardwareRevision(String hardwareRevision) {
-		HardwareRevision = hardwareRevision;
+		this.hardwareRevision = hardwareRevision;
 	}
 	public String getType() {
 		return type;

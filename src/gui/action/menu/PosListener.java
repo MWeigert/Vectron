@@ -5,6 +5,7 @@
 
 package gui.action.menu;
 
+import tools.table.CashPointTable;
 import tools.table.POSTable;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,10 +29,17 @@ public class PosListener implements EventHandler<ActionEvent> {
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		POSTable table = new POSTable();
-		vp.getBorderPane().setCenter(table.getTable(vp.getPos()));
+		
+		if (vp.getFileType()==1) {
+			CashPointTable table = new CashPointTable();
+			vp.getBorderPane().setCenter(table.getTable(vp.getCpArray()));
+		}
+		
+		if (vp.getFileType()==2) {
+			POSTable table = new POSTable();
+			vp.getBorderPane().setCenter(table.getTable(vp.getPos()));
+		}
+		
 	}
 	
-	
-
 }
