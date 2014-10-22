@@ -7,6 +7,7 @@ package main;
 
 import gui.menu.ArticleMenu;
 import gui.menu.DbMenu;
+import gui.menu.ExportMenu;
 import gui.menu.FileMenu;
 import gui.menu.PosMenu;
 import gui.menu.SideMenu;
@@ -66,7 +67,7 @@ public class VP extends Application {
 		menu.getMenus().addAll(new FileMenu(primaryStage, this).getFileMenu(),
 				new PosMenu(this).getPosMenu(), new WGMenu(this).getWgMenu(),
 				new ArticleMenu(this).getArticleMenu(),
-				new DbMenu(this).getdbMenu());
+				new DbMenu(this).getdbMenu(), new ExportMenu(this).getExportMenu());
 
 		SideMenu side = new SideMenu(border, this);
 
