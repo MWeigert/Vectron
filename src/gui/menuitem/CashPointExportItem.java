@@ -5,7 +5,10 @@
 
 package gui.menuitem;
 
-import data.basis.CashPointArray;
+import java.util.ArrayList;
+
+import main.VP;
+import data.basis.CashPoint;
 import gui.action.menu.CashPointExportListener;
 import javafx.scene.control.MenuItem;
 
@@ -20,11 +23,11 @@ public class CashPointExportItem {
 	
 	private MenuItem cpExportItem;
 	
-	public CashPointExportItem( CashPointArray cpArray) {
+	public CashPointExportItem(VP vp) {
 		cpExportItem = new MenuItem("Cash point");
-		cpExportItem.setOnAction(new CashPointExportListener(cpArray));
+		cpExportItem.setOnAction(new CashPointExportListener(vp));
 	}
-	
+
 	public MenuItem getExportItem() {
 		return cpExportItem;
 	}

@@ -114,4 +114,8 @@ public class CashPoint {
 		this.dumpPWD = dumpPWD;
 	}
 	
+	public String toString() {
+		return number.toString() + " " + name; 
+	}
+	
 }

@@ -5,6 +5,7 @@
 
 package tools.analyse.pos;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import tools.analyse.DefType1Extractor;
@@ -25,6 +26,7 @@ import data.enums.DefType1;
 public class CashPointExtractor {
 
 	private CashPointArray cashPointArray;
+	private ArrayList<CashPoint> cpArr;
 
 	public CashPointExtractor(Map<Integer, String> log) {
 		int anz = 0;
@@ -35,6 +37,7 @@ public class CashPointExtractor {
 		CashPoint cp = new CashPoint();
 
 		cashPointArray = new CashPointArray();
+		cpArr = new ArrayList<CashPoint>();
 
 		System.out.println("Kassen werden extrahiert.");
 
@@ -43,6 +46,8 @@ public class CashPointExtractor {
 			TypeExtractor typeEx = new TypeExtractor(line);
 			if (typeEx.getType() == 1000) {
 				cashPointArray.addCashPoint(cp);
+				cpArr.add(cp);
+				
 				cp = new CashPoint();
 				stop = true;
 			} else {
@@ -132,4 +137,8 @@ public class CashPointExtractor {
 		return cashPointArray;
 	}
 
+	public ArrayList<CashPoint> getCpArr() {
+		return cpArr;
+	}
+	
 }

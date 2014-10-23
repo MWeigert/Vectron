@@ -27,7 +27,7 @@ public class ExportMenu {
 
 		exportMenu = new Menu("Export");
 
-		CashPointExportItem cpItem = new CashPointExportItem(vp.getCpArray());
+		CashPointExportItem cpItem = new CashPointExportItem(vp);
 
 		exportMenu.getItems().addAll(cpItem.getExportItem());
 	}

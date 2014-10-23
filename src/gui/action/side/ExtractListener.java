@@ -37,6 +37,8 @@ public class ExtractListener implements EventHandler<ActionEvent> {
 		if (vp.getFileType() == 1) {
 			CashPointExtractor cpEx = new CashPointExtractor(vp.getLog());
 			vp.setCpArray(cpEx.getCashPointArray());
+			System.out.println(cpEx.getCpArr());
+			vp.setCpArr(cpEx.getCpArr());
 			new MessageBox("Information", "Extraction of type 1 file finished");
 		}
 

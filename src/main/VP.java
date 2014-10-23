@@ -13,11 +13,13 @@ import gui.menu.PosMenu;
 import gui.menu.SideMenu;
 import gui.menu.WGMenu;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 import data.basis.Articles;
+import data.basis.CashPoint;
 import data.basis.CashPointArray;
 import data.basis.Definitions;
 import data.basis.POSArray;
@@ -41,6 +43,7 @@ public class VP extends Application {
 	private TreeMap<Long, String> articleMap;
 	private POSArray pos;
 	private CashPointArray cpArray;
+	private ArrayList<CashPoint> cpArr;
 	private Articles articles;
 	private Long number;
 	private Stage primaryStage;
@@ -151,6 +154,14 @@ public class VP extends Application {
 
 	public void setCpArray(CashPointArray cpArray) {
 		this.cpArray = cpArray;
+	}
+
+	public ArrayList<CashPoint> getCpArr() {
+		return cpArr;
+	}
+
+	public void setCpArr(ArrayList<CashPoint> cpArr) {
+		this.cpArr = cpArr;
 	}
 
 }
