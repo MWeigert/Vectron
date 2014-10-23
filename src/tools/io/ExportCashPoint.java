@@ -25,25 +25,25 @@ import data.basis.CashPoint;
 public class ExportCashPoint {
 
 	private ArrayList<CashPoint> data;
-	
+
 	public ExportCashPoint(File file, VP vp) {
 		this.data = vp.getCpArr();
-		
-		
+
 		PrintWriter writer;
 
 		try {
 			writer = new PrintWriter(new BufferedWriter(new FileWriter(file)));
-			for (CashPoint array : data ) {
-				
-				writer.print(data.toString());
+			writer.print("Nummer; Name; IP Adresse; Seriennummer; Hardware Version; Hardware Typ; "
+					+ "Typ; Programm Version; Sprache; OS Version; Build; Revision; Flashformat; PWD\r\n");
+			
+			for (CashPoint array : data) {
+				writer.print(array.toString());
 				writer.print("\r\n");
 			}
-			
-			
+
 			writer.close();
+			
 		} catch (IOException e) {
-			// TODO: handle exception
 			System.out.println("shit is going real in ExportCashPoint");
 		}
 	}
