@@ -47,6 +47,12 @@ public class LoadListener implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 		FileChooser fc = new FileChooser();
 
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+				"VC export files (*.exp, *.VComExp)", "*.exp");
+
+		fc.getExtensionFilters().add(extFilter);
+
+		
 		File file = fc.showOpenDialog(null);
 
 		LogLoader loader = new LogLoader(file);

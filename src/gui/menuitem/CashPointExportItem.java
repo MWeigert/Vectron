@@ -5,10 +5,8 @@
 
 package gui.menuitem;
 
-import java.util.ArrayList;
 
 import main.VP;
-import data.basis.CashPoint;
 import gui.action.menu.CashPointExportListener;
 import javafx.scene.control.MenuItem;
 

@@ -49,8 +49,8 @@ public class ArticlesExtractor {
 					// ID 3 => Article Name (name on display)
 					case 3:
 							if (df.getDataValue().length()>2) {
-								System.out.println(art.getName());
-								System.out.println(df.getDataValue());		
+//								System.out.println(art.getName());
+//								System.out.println(df.getDataValue());		
 								art.setDisplay(df.getDataValue());
 							}
 						break;

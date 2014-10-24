@@ -118,7 +118,7 @@ public class CashPointExtractor {
 								.getStringValue());
 						break;
 					default:
-						System.out.println("Troubles in CashPointExtractor");
+						// do nothing
 						break;
 					}
 				}

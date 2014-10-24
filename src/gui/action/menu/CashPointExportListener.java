@@ -8,9 +8,7 @@ package gui.action.menu;
 import java.io.File;
 
 import main.VP;
-
 import tools.io.ExportCashPoint;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
@@ -43,16 +41,17 @@ public class CashPointExportListener implements EventHandler<ActionEvent> {
 		File file = fc.showSaveDialog(null);
 		String fileName = file.getName();
 		
-		ExportCashPoint exWriter;
 
 		if (!fileName.contains(".")) {
 			// Missing .csv in file name 
 			fileName = file.getPath() + ".csv";
 			File file2 = new File(fileName);
-			exWriter = new ExportCashPoint(file2, vp);
+			@SuppressWarnings("unused")
+			ExportCashPoint exWriter = new ExportCashPoint(file2, vp);
 		} else {
 			// File name is correct .csv is not missing
-			exWriter = new ExportCashPoint(file, vp);
+			@SuppressWarnings("unused")
+			ExportCashPoint exWriter = new ExportCashPoint(file, vp);
 		}
 	}
 

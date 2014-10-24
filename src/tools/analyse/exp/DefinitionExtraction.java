@@ -37,12 +37,12 @@ public class DefinitionExtraction {
 			if (ende == lineNew.length() - 1) {
 				onWork = false;
 			}
-			System.out.println("DataField: " + lineNew.substring(anf, ende));
+//			System.out.println("DataField: " + lineNew.substring(anf, ende));
 			definition.addDataField(new DataFieldExtraction(lineNew.substring(
 					anf, ende)).getData());
 			anf = ende + 1;
 		} while (onWork);
-		System.out.println("Extraction of Definition finished.");
+//		System.out.println("Extraction of Definition finished.");
 		return definition;
 	}
 
